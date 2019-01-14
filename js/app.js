@@ -20,6 +20,8 @@
     let product = {
       id: target.getAttribute('data-product-id'),
       name: target.getAttribute('data-product-name'),
+      description: target.getAttribute('data-product-description'),
+      quantity: target.previousElementSibling.value,
       price: target.getAttribute('data-product-price'),
     }
 
@@ -50,9 +52,21 @@
     price.setAttribute('value', product.price)
     price.setAttribute('name', 'price[]')
 
+    let quantity = document.createElement('input')
+    quantity.setAttribute('type', 'hidden')
+    quantity.setAttribute('value', product.quantity)
+    quantity.setAttribute('name', 'quantity[]')
+
+    let description = document.createElement('input')
+    description.setAttribute('type', 'hidden')
+    description.setAttribute('value', product.description)
+    description.setAttribute('name', 'description[]')
+
     getElement('#carrinho').appendChild(id)
     getElement('#carrinho').appendChild(name)
     getElement('#carrinho').appendChild(price)
+    getElement('#carrinho').appendChild(quantity)
+    getElement('#carrinho').appendChild(description)
     getElement('#carrinho').submit();
   }
 

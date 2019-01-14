@@ -24,7 +24,7 @@
     }
 
     cart.push(product)
-
+    target.setAttribute('disabled', true)
     return saveCart(cart)
   }
   

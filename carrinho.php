@@ -1,3 +1,20 @@
+<?php
+    require('classes/Produto.php');
+    require('classes/ItemCarrinho.php');
+    require('classes/Carrinho.php');
+
+    $listaItens = [];
+
+    for($i = 0; $i < count($_POST['name']); $i++) {
+        $produto = new Produto($_POST['name'][$i], $_POST['description'][$i], $_POST['price'][$i]);
+        $quantidadeProd = $_POST['quantity'][$i];
+
+        $listaItens[] = new ItemCarrinho($quantidadeProd, $produto);
+    }
+
+    $carrinho = new Carrinho($listaItens);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

@@ -42,23 +42,23 @@
         <div class="row">
             <div class="col-md-8">  
                 <ul class="list-group">
-                    <?php for($i = 0; $i < 4; $i++) : ?>
+                    <?php foreach($carrinho->listarItens() as $item) : ?>
                         <li class="list-group-item d-flex justify-content-between lh-condensed">
                             <div>
-                                <h6 class="my-0">{{ Nome 1 }}</h6>
-                                <p><small class="text-muted">{{ Descricao do produto }}</small></p>
-                                <p><small>Quantidade: {{ quantidade do produto }}</small></p>
+                                <h6 class="my-0"><?php echo $item->produto->nome; ?></h6>
+                                <p><small class="text-muted"><?php echo $item->produto->descricao; ?></small></p>
+                                <p><small>Quantidade: <?php echo $item->quantidade; ?></small></p>
                             </div>
-                            <span class="text-muted">R$ {{valor do produto}}</span>
+                            <span class="text-muted">R$ <?php echo $item->subtotal(); ?></span>
                         </li>
-                    <?php endfor; ?>
+                    <?php endforeach; ?>
                 </ul>
             </div>
             <div class="col-md-4">
                 <div class="list-group">
                     <h5>Resumo</h5>
                     <div class="list-group-item d-flex">
-                        <strong>TOTAL:</strong> {{ TOTAL }}
+                        <strong>TOTAL:</strong> R$ <?php echo $carrinho->total(); ?>
                     </div>
                     <div class="list-group-item d-flex">
                         <div class="col-md-12">

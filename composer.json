@@ -1,0 +1,7 @@
+{
+    "name": "ecommerce-bacanudo",
+    "description": "Melhor ecommerce",
+    "require": {
+        "pagarme/pagarme-php": "^4.0"
+    }
+}

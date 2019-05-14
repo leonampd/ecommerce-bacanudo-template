@@ -13,7 +13,7 @@
     let cart = sessionStorage.getItem('cart')
     return cart !== null ? JSON.parse(cart) : []
   }
-  
+
   const addToCart = (event) => {
     const target = event.srcTarget || event.srcElement
 
@@ -29,7 +29,7 @@
     target.setAttribute('disabled', true)
     return saveCart(cart)
   }
-  
+
   const bindAddToCart = () => {
     const buttons = getAllElements('.add-to-cart').forEach((button) => {
       button.addEventListener('click', addToCart)

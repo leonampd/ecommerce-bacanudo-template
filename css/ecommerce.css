@@ -2,6 +2,10 @@
     margin-bottom: 34px
 }
 
+.product-item {
+    margin-bottom: 25px;
+}
+
 .product-img img {
     width: 100%;
 }

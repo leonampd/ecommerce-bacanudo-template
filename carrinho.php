@@ -18,14 +18,13 @@
             <a id="place-order" class="p-2 text-dark" href="#">Ver carrinho</a>
         </nav>
     </div>
-    
     <div class="container">
         <h2>Carrinho</h2>
 
         <div class="row">
-            <div class="col-md-8">  
+            <div class="col-md-8">
                 <ul class="list-group">
-                    <?php for($i = 0; $i < 4; $i++) : ?>
+                    <?php for ($i = 0; $i < 4; $i++) : ?>
                         <li class="list-group-item d-flex justify-content-between lh-condensed">
                             <div>
                                 <h6 class="my-0">{{ Nome 1 }}</h6>
